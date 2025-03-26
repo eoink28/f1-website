@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Hub - Home</title>
+    <link rel="icon" type="image/png" href="images/f1-logo.png">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/f1-logo.png" alt="F1 Logo" class="f1-logo">
+                <h1>F1 Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu<i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="drivers.html">Drivers</a>
+                            <a href="telemetry.html">Telemetry</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Experience the Thrill of Formula 1</h2>
+                <p>Explore stats, driver profiles, and telemetry insights at F1 Hub.</p>
+                <a href="drivers.html" class="btn">Discover Drivers</a>
+            </div>
+        </section>
+
+        <section class="news-ticker">
+            <div class="container">
+                <h3>Latest News</h3>
+                <div class="ticker">
+                    <p>Lando Norris takes pole at the Australian GP! • Verstappen aims for a third consecutive title. • New regulations for 2025 season announced.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-race">
+            <div class="container">
+                <h2>Upcoming Race</h2>
+                <div class="race-card">
+                    <img src="images/japan.jpg" alt="Race Track">
+                    <div class="race-details">
+                        <h3>Japanese Grand Prix</h3>
+                        <p><i class="fas fa-calendar-alt"></i> April 6th, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Japan</p>
+                    </div>
+                    <div class="countdown">
+                        <h3>Time Until Race</h3>
+                        <div id="countdown-timer">
+                            <span id="days">00</span> Days
+                            <span id="hours">00</span> Hours
+                            <span id="minutes">00</span> Minutes
+                            <span id="seconds">00</span> Seconds
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="container">
+                <h2>Featured Content</h2>
+                <h3>Your one stop shop for all things F1</h3>
+                <div class="card-grid">
+                    <a href="https://www.youtube.com/playlist?list=PLfoNZDHitwjUleAqrgG-OC5gVAL2mv-Mh">
+                        <div class="card">
+                            <i class="fas fa-flag-checkered card-icon"></i>
+                            <h3>Latest Race Highlights</h3>
+                            <p>Relive the thrilling moments from the latest Grand Prix, including key overtakes and podium finishes.</p>
+                        </div>
+                    </a>
+                    <div class="card">
+                        <i class="fas fa-user card-icon"></i>
+                        <h3>Driver Spotlight: Lando Norris</h3>
+                        <p>Discover Lando Norris’s journey and performance in the 2025 season.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <h3>Telemetry Insights</h3>
+                        <p>Dive into telemetry data to analyze driver performance on the track (coming soon).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Join the F1 Community</h2>
+                <p>Stay updated with the latest F1 news, stats, and insights.</p>
+                <a href="#" class="btn">Sign Up Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 F1 Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Countdown Timer for Japanese Grand Prix (April 6th, 2025)
+        const raceDate = new Date('April 6, 2025 00:00:00').getTime();
+
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = raceDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById('countdown-timer').textContent = 'Race Has Started!';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

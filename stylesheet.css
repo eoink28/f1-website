@@ -1,0 +1,488 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.f1-logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+nav ul li a.active {
+    color: #ffeb3b;
+}
+
+/* Dropdown Menu */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+    color: #d32f2f;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/f1-car-background.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b71c1c;
+}
+
+.btn.secondary {
+    background-color: #333;
+    padding: 8px 16px; /* Reduced padding for a smaller button */
+}
+
+.btn.secondary:hover {
+    background-color: #555;
+}
+
+/* News Ticker */
+.news-ticker {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.news-ticker h3 {
+    display: inline-block;
+    margin-right: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+}
+
+.ticker p {
+    display: inline;
+    margin-right: 20px;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Upcoming Race Section */
+.upcoming-race {
+    padding: 60px 0;
+}
+
+.upcoming-race h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d32f2f;
+}
+
+.race-card {
+    display: flex;
+    align-items: stretch;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.race-card img {
+    width: 40%;
+    height: 200; /* Ensure the image takes the full height of the card */
+    object-fit: cover;
+    /* Removed: margin-top: 20px; */
+}
+
+.race-details {
+    padding: 25px;
+    flex: 1;
+}
+
+.race-details h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px; /* Reduced from 30px for better fit */
+    margin-bottom: 12px; /* Adjusted for better spacing */
+}
+
+.race-details p {
+    font-size: 16px;
+    margin-bottom: 10px; /* Adjusted from 8px */
+    line-height: 1.4; /* Added for better readability */
+}
+
+.race-details p i {
+    margin-right: 10px;
+    color: #d32f2f;
+}
+
+.race-details .btn.secondary {
+    margin-top: 20px; /* Increased from 15px for better spacing */
+}
+
+/* Countdown Timer Styling */
+.countdown {
+    padding: 25px 25px 25px 35px;
+    text-align: center;
+    flex: 1;
+    border-left: 2px solid #d32f2f;
+}
+
+.countdown h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #d32f2f;
+}
+
+#countdown-timer {
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#countdown-timer span {
+    font-weight: 700;
+    color: #d32f2f;
+    margin: 0 5px;
+}
+
+/* Featured Section */
+.featured {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+.featured h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d32f2f;
+}
+
+.featured h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.featured .card-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #d32f2f;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border-color: #ffeb3b;
+}
+
+.card-icon {
+    font-size: 35px;
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Remove underline from the link */
+.card-grid a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CTA Section */
+.cta {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Drivers 2025 Section */
+.drivers-2025 {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.drivers-2025 h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d32f2f;
+}
+
+.drivers-2025 .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.driver-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Telemetry Section */
+.telemetry {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.telemetry h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #d32f2f;
+}
+
+#telemetry-graph {
+    margin-top: 30px;
+    height: 400px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .featured .card-grid {
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .race-card {
+        flex-direction: column;
+    }
+
+    .race-card img {
+        width: 100%;
+        height: 200px; 
+    }
+
+    .countdown {
+        padding: 20px;
+        border-left: none;
+        border-top: 2px solid #d32f2f;
+    }
+
+    #countdown-timer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .featured .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
