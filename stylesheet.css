@@ -223,7 +223,7 @@ nav ul li a.active {
 
 .race-details h3 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 45px; /* Reduced from 30px for better fit */
+    font-size: 45fpx; /* Reduced from 30px for better fit */
     margin-bottom: 12px; /* Adjusted for better spacing */
 }
 

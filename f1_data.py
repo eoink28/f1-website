@@ -20,10 +20,11 @@ try:
             timestamp = datetime.fromisoformat(entry['date'].replace('Z', '+00:00'))
             # Reformat to a readable format
             readable_time = timestamp.strftime('%B %d, %Y %H:%M:%S')
-            print(f"Time: {readable_time}, Speed: {entry['speed']} km/h, RPM: {entry['rpm']}, Throttle: {entry['throttle']}%")
+            print(f"Time: {readable_time}, Speed: {entry['speed']} km/h, RPM: {entry['rpm']}, Throttle: {entry['throttle']}% , Brake Pressed: {entry['brake']}, Gear: {entry['n_gear']}")
             i += 1
 
         print(f"The total number of rows of data display is: {i}")
 
 except URLError as e:
     print(f"Failed to fetch data: {e}")
+    
